@@ -1,0 +1,83 @@
+break
+  أكسر
+case
+  بحالة
+catch
+  أمسك
+class
+  صف
+const
+  ثابت
+continue
+  كمل
+debugger
+  مصلح
+default
+  معيار
+delete
+  احذف
+do
+  افعل
+else
+  وإلا
+export
+  اصدر
+extends
+  يمتد
+finally
+  اخيرا
+for
+  لكل
+function
+  دالة
+if
+  اذا
+import
+  استورد
+in
+
+instanceof
+  مثل
+let
+  دع
+new
+  اصنع
+return
+  رجع
+super
+  والد
+switch
+  بدل
+this
+  هذا
+throw
+  ارمي
+try
+  حاول
+typeof
+  نوع
+var
+  متغير
+void
+  فارغ
+while
+  بينما
+with
+  مع
+yield
+  اخضع
+
+
+---
+reserved keywords
+
+enum
+implements
+interface
+let
+package
+private
+protected
+public
+static
+yield
