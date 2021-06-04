@@ -35,7 +35,7 @@ if
 import
   استورد
 in
-
+  في
 instanceof
   مثل
 let
