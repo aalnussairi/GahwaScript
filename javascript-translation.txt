@@ -81,3 +81,9 @@ protected
 public
 static
 yield
+
+Standard Objects
+Console
+  لوحة  from لوحة مراقبة
+  log
+    سجل
