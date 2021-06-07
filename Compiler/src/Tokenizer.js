@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var punctuators_1 = require("./tokens/punctuators");
+var identifiers_1 = require("./tokens/identifiers");
 var Tokenizer = (function () {
     function Tokenizer(input) {
         this.input = input;
@@ -67,6 +68,10 @@ var Tokenizer = (function () {
                 while (LETTERS.test(char)) {
                     value += char;
                     char = this.input[++current];
+                }
+                if (identifiers_1["default"].indexOf(value) >= 0) {
+                    this.tokensPush('identifier', startPoint, current - 1, value);
+                    continue;
                 }
                 this.tokensPush('name', startPoint, current - 1, value);
                 continue;

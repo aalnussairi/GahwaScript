@@ -5,7 +5,7 @@ case
 catch
   أمسك
 class
-  صف
+  مخطط
 const
   ثابت
 continue
@@ -65,7 +65,7 @@ while
 with
   مع
 yield
-  اخضع
+  تمهل
 
 
 ---

@@ -1,4 +1,4 @@
 import Parser from './Parser';
 
-let parser = new Parser('لوحة.سجل()');
+let parser = new Parser('لوحة.سجل("السلام عليك يا وسام")');
 console.log(parser.parse());

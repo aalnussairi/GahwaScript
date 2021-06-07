@@ -1,5 +1,5 @@
 import punctuators from './tokens/punctuators';
-
+import identifiers from './tokens/identifiers';
 interface token {
   type: string;
   start: number;
@@ -88,6 +88,10 @@ export default class Tokenizer {
         while (LETTERS.test(char)) {
           value += char;
           char = this.input[++current];
+        }
+        if (identifiers.indexOf(value) >= 0) {
+          this.tokensPush('identifier', startPoint, current - 1, value);
+          continue;
         }
         this.tokensPush('name', startPoint, current - 1, value);
         continue;
