@@ -4,16 +4,9 @@ var punctuators_1 = require("./tokens/punctuators");
 var Tokenizer = (function () {
     function Tokenizer(input) {
         this.input = input;
-        this.puncChars = punctuators_1["default"];
         this.output = [];
         this.tokens = [];
     }
-    Tokenizer.prototype.checkPunc = function (input) {
-        if (punctuators_1["default"].indexOf(input) >= 0) {
-            return true;
-        }
-        return false;
-    };
     Tokenizer.prototype.getOutput = function () {
         return this.output;
     };
@@ -31,14 +24,24 @@ var Tokenizer = (function () {
                 current++;
                 continue;
             }
-            if (char === '.' || char === '؛') {
+            if (punctuators_1["default"].indexOf(char) >= 0) {
                 this.tokensPush('punctuation', current, current, char);
                 current++;
                 continue;
             }
-            if (this.checkPunc(char)) {
-                this.tokensPush('punctuation', current, current, char);
-                current++;
+            var STRINGS = /'|"/;
+            if (STRINGS.test(char)) {
+                var startPoint = current, startIdentifier = char;
+                console.log(startIdentifier);
+                var value = '';
+                do {
+                    char = this.input[++current];
+                    if (char === '"')
+                        break;
+                    value += char;
+                } while (char !== startIdentifier);
+                char = this.input[++current];
+                this.tokensPush('string', startPoint, current - 1, value);
                 continue;
             }
             var WHITESPACE = /\s/;
@@ -54,7 +57,7 @@ var Tokenizer = (function () {
                     value += char;
                     char = this.input[++current];
                 }
-                this.tokensPush('number', startPoint, current, value);
+                this.tokensPush('number', startPoint, current - 1, value);
                 continue;
             }
             var LETTERS = /^[ء-ي$_]+([ء-ي٠-٩0-9$ـ]*)$/;
@@ -65,7 +68,7 @@ var Tokenizer = (function () {
                     value += char;
                     char = this.input[++current];
                 }
-                this.tokensPush('name', startPoint, current, value);
+                this.tokensPush('name', startPoint, current - 1, value);
                 continue;
             }
             throw new TypeError("I don't know what this is " + char + " at position " + current);

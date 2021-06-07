@@ -8,15 +8,6 @@ interface token {
 }
 
 export default class Tokenizer {
-  private puncChars: string[] = punctuators;
-
-  checkPunc(input: string): boolean {
-    if (punctuators.indexOf(input) >= 0) {
-      return true;
-    }
-    return false;
-  }
-
   private output: token[] = [];
   private tokens: token[] = [];
   constructor(private input: string) {}
@@ -42,17 +33,28 @@ export default class Tokenizer {
         continue;
       }
 
-      //check punctuation: . OR ؛
-      if (char === '.' || char === '؛') {
+      //check for punctuation
+      if (punctuators.indexOf(char) >= 0) {
         this.tokensPush('punctuation', current, current, char);
         current++;
         continue;
       }
 
-      //check for string punctuation
-      if (this.checkPunc(char)) {
-        this.tokensPush('punctuation', current, current, char);
-        current++;
+      // THIS LOOKS UGLY BUT AT LEAST IT WORKS
+      // TODO: MAKE IT LOOK A BIT BETTER JEEZ
+      const STRINGS = /'|"/;
+      if (STRINGS.test(char)) {
+        const startPoint = current,
+          startIdentifier = char;
+        console.log(startIdentifier);
+        let value = '';
+        do {
+          char = this.input[++current];
+          if (char === '"') break;
+          value += char;
+        } while (char !== startIdentifier);
+        char = this.input[++current];
+        this.tokensPush('string', startPoint, current - 1, value);
         continue;
       }
 
@@ -73,7 +75,7 @@ export default class Tokenizer {
           value += char;
           char = this.input[++current];
         }
-        this.tokensPush('number', startPoint, current, value);
+        this.tokensPush('number', startPoint, current - 1, value);
         continue;
       }
 
@@ -87,7 +89,7 @@ export default class Tokenizer {
           value += char;
           char = this.input[++current];
         }
-        this.tokensPush('name', startPoint, current, value);
+        this.tokensPush('name', startPoint, current - 1, value);
         continue;
       }
       throw new TypeError(

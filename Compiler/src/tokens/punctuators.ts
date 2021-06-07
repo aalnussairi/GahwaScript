@@ -5,9 +5,9 @@
 // need to transition that to identify string literals as strings.
 export default [
   '}',
-  '"',
-  "'",
   ']',
+  ')',
+  '(',
   '[',
   '.',
   '؛',
