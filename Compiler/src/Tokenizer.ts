@@ -66,7 +66,7 @@ export default class Tokenizer {
       }
 
       //Check for Numbers
-      const NUMBERS = /[٠-٩]/;
+      const NUMBERS = /[٠-٩0-9]/;
       if (NUMBERS.test(char)) {
         const startPoint = current;
         let value = '';

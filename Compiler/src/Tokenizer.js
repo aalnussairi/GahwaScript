@@ -49,7 +49,7 @@ var Tokenizer = (function () {
                 current++;
                 continue;
             }
-            var NUMBERS = /[٠-٩]/;
+            var NUMBERS = /[٠-٩0-9]/;
             if (NUMBERS.test(char)) {
                 var startPoint = current;
                 var value = '';
