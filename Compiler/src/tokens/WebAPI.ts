@@ -37,14 +37,28 @@ export default new Map([
   ['شظية', 'createDocumentFragment'],
   ['جزء', 'createElement'],
   ['حدث', 'createEvent'],
-  ['', 'createTextNode'],
-  // TODO: this one is tough...
+  ['كاتب', 'createTextNode'],
+  // TODO: The one above is tough...
   // Maybe GahwaScript should breakdown
   // PascalCase and camelCase stuff in
   // english into multiple identifiers
   // separated by dots in arabic? like
   // window.document.get.element.id ???
+  // I think this may be of use at it
+  // can highlight to learners that
+  // U can camelCase stuff in code
   ['المظهر', 'defaultView'],
   ['صمم', 'designMode'],
   ['نوع', 'doctype'],
+  ['قارئ', 'documentElement'],
+  ['مراسل', 'documentMode'], // See this one is dumb
+  ['نادل', 'documentURI'], // same here
+  ['مجال', 'domain'],
+  ['مضمنات', 'embeds'],
+  ['نفذ', 'execCommand'],
+  ['استمارات', 'forms'],
+  ['', 'fullscreenElement'],
+  ['', 'fullscreenEnabled'],
+  // The above two are impossible to put in one word.
+  // I'll need to rethink how I'm naming these identifiers.
 ]);

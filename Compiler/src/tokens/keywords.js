@@ -13,7 +13,7 @@ exports["default"] = new Map([
     ['احذف', 'delete'],
     ['افعل', 'do'],
     ['وإلا', 'else'],
-    ['عدد', 'enum'],
+    ['متعدد', 'enum'],
     ['اصدر', 'export'],
     ['يمتد', 'extends'],
     ['زائف', 'false'],
