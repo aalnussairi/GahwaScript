@@ -30,4 +30,21 @@ export default new Map([
   ['الاساسي', 'baseURI'],
   ['نص', 'body'],
   ['اغلق', 'close'],
+  ['بسكويت', 'cookie'],
+  ['ترميز', 'characterSet'],
+  ['ميزة', 'createAttribute'],
+  ['تعليق', 'createComment'],
+  ['شظية', 'createDocumentFragment'],
+  ['جزء', 'createElement'],
+  ['حدث', 'createEvent'],
+  ['', 'createTextNode'],
+  // TODO: this one is tough...
+  // Maybe GahwaScript should breakdown
+  // PascalCase and camelCase stuff in
+  // english into multiple identifiers
+  // separated by dots in arabic? like
+  // window.document.get.element.id ???
+  ['المظهر', 'defaultView'],
+  ['صمم', 'designMode'],
+  ['نوع', 'doctype'],
 ]);
