@@ -4,7 +4,8 @@
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": false
+    "sourceMap": false,
+    "lib": ["ES6", "dom"]
   },
   "include": ["src/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

@@ -1,5 +1,5 @@
 import punctuators from './tokens/punctuators';
-import identifiers from './tokens/identifiers';
+import identifiers from './tokens/keywords';
 interface token {
   type: string;
   start: number;
@@ -89,7 +89,7 @@ export default class Tokenizer {
           value += char;
           char = this.input[++current];
         }
-        if (identifiers.indexOf(value) >= 0) {
+        if (identifiers.has(value)) {
           this.tokensPush('identifier', startPoint, current - 1, value);
           continue;
         }
