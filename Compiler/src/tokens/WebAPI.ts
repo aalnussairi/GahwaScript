@@ -57,8 +57,18 @@ export default new Map([
   ['مضمنات', 'embeds'],
   ['نفذ', 'execCommand'],
   ['استمارات', 'forms'],
-  ['', 'fullscreenElement'],
-  ['', 'fullscreenEnabled'],
+  ['شاشة.مملوء.جزء', 'fullscreenElement'], //chained method
+  ['هل.شاشة.مملوء', 'fullscreenEnabled'], //chained method
   // The above two are impossible to put in one word.
   // I'll need to rethink how I'm naming these identifiers.
+  // Update: To resolve this, I'll create a partials Map
+  // that identifies the first word of the joined words and
+  // map them to the full words e.g.
+  // If document found, if next word is get and the word
+  // after that is element and after that id, it should
+  // set the identifier as document.get.element.id to
+  // document.getElementById(). In this file, I'll
+  // add the complete identifier such as for e.g.
+  // get.element.by.id and add a comment next
+  // to it to make it clear that this is happening.
 ]);
