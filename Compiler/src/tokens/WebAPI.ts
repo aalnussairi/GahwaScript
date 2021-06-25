@@ -1,5 +1,10 @@
 // https://www.w3schools.com/jsref/obj_window.asp
+// MDN seems to have a more expansive set of references
+// W3 will do for now as I already started with it.
+// https://developer.mozilla.org/en-US/docs/Web/API
 export default new Map([
+  // Window
+  // Window props
   ['نافذة', 'window'],
   ['مغلق', 'closed'],
   ['لوحة', 'console'],
@@ -8,54 +13,45 @@ export default new Map([
   ['امسح', 'clear'],
   ['عدد', 'count'],
   ['خطأ', 'error'],
-  ['جمع', 'group'],
-  ['أطوي', 'groupCollapsed'],
-  ['قسم', 'groupEnd'],
+  ['مجموعة', 'group'], // chained method
+  ['مجموعة.مطوية', 'groupCollapsed'], // chained method
+  ['مجموعة.انهي', 'groupEnd'], // chained method
   ['انبء', 'info'],
   ['سجل', 'log'],
   ['جدول', 'table'],
   ['وقت', 'time'],
-  ['انهي', 'timeEnd'],
+  ['انهي.التوقيت', 'timeEnd'], // chained method
   ['تتبع', 'trace'],
   ['حذر', 'warn'],
   // End Console props and methods
-  ['الوضع', 'defaultStatus'],
+  ['الوضع.افتراضي', 'defaultStatus'], // chained prop
   ['صحيفة', 'document'],
   // Start Document props and methods
-  ['المركز', 'activeElement'],
-  ['اسمع', 'addEventListener'],
-  ['تبنى', 'adoptNode'],
+  ['جزء.منتبة', 'activeElement'], // chained prop
+  ['ضيف.مستمع.لحدث', 'addEventListener'], // chained method
+  ['تبنى.عقدة', 'adoptNode'], // chained method
   ['مراسي', 'anchors'],
   ['صغير', 'applet'],
-  ['الاساسي', 'baseURI'],
+  ['محدد.الموقع.الاساسي', 'baseURI'], // chained prop
   ['نص', 'body'],
   ['اغلق', 'close'],
   ['بسكويت', 'cookie'],
-  ['ترميز', 'characterSet'],
-  ['ميزة', 'createAttribute'],
-  ['تعليق', 'createComment'],
-  ['شظية', 'createDocumentFragment'],
-  ['جزء', 'createElement'],
-  ['حدث', 'createEvent'],
-  ['كاتب', 'createTextNode'],
-  // TODO: The one above is tough...
-  // Maybe GahwaScript should breakdown
-  // PascalCase and camelCase stuff in
-  // english into multiple identifiers
-  // separated by dots in arabic? like
-  // window.document.get.element.id ???
-  // I think this may be of use at it
-  // can highlight to learners that
-  // U can camelCase stuff in code
-  ['المظهر', 'defaultView'],
+  ['مجموعة.الترميز', 'characterSet'], // chained prop
+  ['انتج.ميزة', 'createAttribute'], // chained method
+  ['انتج.تعليق', 'createComment'], // chained method
+  ['انتج.شظية.صفحة', 'createDocumentFragment'], // chained method
+  ['انتج.جزء', 'createElement'], // chained method
+  ['انتج.حدث', 'createEvent'], // chained method
+  ['انتج.عقدة.نصية', 'createTextNode'], // chained method
+  ['منظر.افتراضي', 'defaultView'], // chained prop
   ['صمم', 'designMode'],
-  ['نوع', 'doctype'],
-  ['قارئ', 'documentElement'],
-  ['مراسل', 'documentMode'], // See this one is dumb
-  ['نادل', 'documentURI'], // same here
+  ['صفحة.نوع', 'doctype'], // chained prop
+  ['صفحة.جزء', 'documentElement'], // chained prop
+  ['صفحة.وضع', 'documentMode'], // chained prop
+  ['صفحة.محدد.الموقع', 'documentURI'], // chained prop
   ['مجال', 'domain'],
   ['مضمنات', 'embeds'],
-  ['نفذ', 'execCommand'],
+  ['نفذ.الاوامر', 'execCommand'], // chained method
   ['استمارات', 'forms'], // review all above for the chained naming conv.
   ['شاشة.مملوء.جزء', 'fullscreenElement'], //chained prop
   ['هل.شاشة.مملوء', 'fullscreenEnabled'], //chained method
@@ -86,4 +82,32 @@ export default new Map([
   ['محدد.الموقع', 'URL'], // chained prop
   ['اكتب', 'write'],
   ['اكتب.سطر', 'writeLn'],
+  // End document props and methods
+  ['اطار.جزء', 'frameElement'],
+  ['اطارات', 'frames'],
+  ['تاريخ', 'history'],
+  // Start history props and methods
+  ['طول', 'length'],
+  ['عد', 'back'],
+  ['تقدم', 'forward'],
+  ['اذهب', 'go'],
+  // End history props and methods
+  ['مدى.عامودي', 'innerHeight'],
+  ['مدى.افقي', 'ّinnerWidth'],
+  ['طول', 'length'],
+  ['تخزين.محلي', 'localStorage'],
+  ['موقع', 'location'],
+  // Start location props and methods
+  ['مرساة', 'hash'],
+  ['مضيف', 'host'],
+  ['مضيف.اسم', 'hostName'],
+  ['رابط', 'href'],
+  ['اصل', 'origin'],
+  ['مسار.اسم', 'pathname'],
+  ['منفذ', 'port'],
+  ['بروتوكول', 'protocol'],
+  ['ابحث', 'search'],
+  ['عيين', 'assign'],
+  ['اعد.تحميل', 'reload'],
+  ['بدل', 'replace'],
 ]);

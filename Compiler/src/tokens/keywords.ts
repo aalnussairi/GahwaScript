@@ -41,6 +41,4 @@ export default new Map([
   ['بينما', 'while'],
   ['مع', 'with'],
   ['تمهل', 'yield'],
-  ['لوحة', 'console'],
-  ['سجل', 'log'],
 ]);

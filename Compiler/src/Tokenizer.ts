@@ -1,5 +1,7 @@
 import punctuators from './tokens/punctuators';
 import identifiers from './tokens/keywords';
+import WebAPI from './tokens/WebAPI';
+
 interface token {
   type: string;
   start: number;
@@ -90,7 +92,21 @@ export default class Tokenizer {
           char = this.input[++current];
         }
         if (identifiers.has(value)) {
-          this.tokensPush('identifier', startPoint, current - 1, value);
+          this.tokensPush(
+            'keyword',
+            startPoint,
+            current - 1,
+            identifiers.get(value)
+          );
+          continue;
+        }
+        if (WebAPI.has(value)) {
+          this.tokensPush(
+            'identifier',
+            startPoint,
+            current - 1,
+            WebAPI.get(value)
+          );
           continue;
         }
         this.tokensPush('name', startPoint, current - 1, value);
