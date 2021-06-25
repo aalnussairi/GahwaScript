@@ -6,7 +6,11 @@ It's the arabic version of JavaScript. It works on browsers by compiling GahwaSc
 
 ## Current Progress
 
-Zero.
+Working on translating core WebAPIs. Perhaps the Window API first and any APIs it depends on (Storage API for example).
+
+Also setup a basic tokenizer for the parser.
+
+Once I have these two running to a limited degree I'll refactor for maintainability and begin working on generating ASTs.
 
 ## Future Plans
 
