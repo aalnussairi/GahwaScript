@@ -2,11 +2,12 @@
 exports.__esModule = true;
 var Tokenizer_1 = require("./Tokenizer");
 var Parser = (function () {
-    function Parser(input) {
-        this.input = input;
+    function Parser() {
+        this.input = '';
         this.tokeizer = new Tokenizer_1["default"](this.input);
     }
-    Parser.prototype.parse = function () {
+    Parser.prototype.parse = function (input) {
+        this.input = input;
         this.tokeizer.tokenize();
         return this.tokeizer.getOutput();
     };
