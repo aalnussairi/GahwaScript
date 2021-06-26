@@ -1,16 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-// https://www.w3schools.com/jsref/obj_window.asp
-// MDN seems to have a more expansive set of references
-// W3 will do for now as I already started with it.
-// https://developer.mozilla.org/en-US/docs/Web/API
-exports.default = new Map([
-    // Window
-    // Window props
+exports.__esModule = true;
+exports["default"] = new Map([
     ['نافذة', 'window'],
     ['مغلق', 'closed'],
     ['لوحة', 'console'],
-    // Start console props and methods
     ['اكد', 'assert'],
     ['امسح', 'clear'],
     ['عدد', 'count'],
@@ -25,10 +18,8 @@ exports.default = new Map([
     ['انهي.التوقيت', 'timeEnd'],
     ['تتبع', 'trace'],
     ['حذر', 'warn'],
-    // End Console props and methods
     ['الوضع.افتراضي', 'defaultStatus'],
     ['صحيفة', 'document'],
-    // Start Document props and methods
     ['جزء.منتبة', 'activeElement'],
     ['ضيف.مستمع.لحدث', 'addEventListener'],
     ['تبنى.عقدة', 'adoptNode'],
@@ -84,22 +75,18 @@ exports.default = new Map([
     ['محدد.الموقع', 'URL'],
     ['اكتب', 'write'],
     ['اكتب.سطر', 'writeLn'],
-    // End document props and methods
     ['اطار.جزء', 'frameElement'],
     ['اطارات', 'frames'],
     ['تاريخ', 'history'],
-    // Start history props and methods
     ['طول', 'length'],
     ['عد', 'back'],
     ['تقدم', 'forward'],
     ['اذهب', 'go'],
-    // End history props and methods
     ['مدى.عامودي', 'innerHeight'],
     ['مدى.افقي', 'ّinnerWidth'],
     ['طول', 'length'],
     ['تخزين.محلي', 'localStorage'],
     ['موقع', 'location'],
-    // Start location props and methods
     ['مرساة', 'hash'],
     ['مضيف', 'host'],
     ['مضيف.اسم', 'hostName'],
@@ -113,4 +100,3 @@ exports.default = new Map([
     ['اعد.تحميل', 'reload'],
     ['بدل', 'replace'],
 ]);
-//# sourceMappingURL=WebAPI.js.map

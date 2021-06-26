@@ -1,8 +1,6 @@
 "use strict";
-// reserved keywords from:
-// https://tc39.es/ecma262/#sec-identifier-names
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = new Map([
+exports.__esModule = true;
+exports["default"] = new Map([
     ['غير متزامن', 'async'],
     ['أكسر', 'break'],
     ['حالة', 'case'],
@@ -43,4 +41,3 @@ exports.default = new Map([
     ['مع', 'with'],
     ['تمهل', 'yield'],
 ]);
-//# sourceMappingURL=keywords.js.map

@@ -36,8 +36,8 @@ export default class Tokenizer {
       }
 
       //check for punctuation
-      if (punctuators.indexOf(char) >= 0) {
-        this.tokensPush('punctuation', current, current, char);
+      if (punctuators.has(char)) {
+        this.tokensPush('punctuation', current, current, punctuators.get(char));
         current++;
         continue;
       }
@@ -56,7 +56,7 @@ export default class Tokenizer {
           value += char;
         } while (char !== startIdentifier);
         char = this.input[++current];
-        this.tokensPush('string', startPoint, current - 1, value);
+        this.tokensPush('string', startPoint, current - 1, `"${value}"`);
         continue;
       }
 
