@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/aalnussairi/GahwaScript#readme",
   "devDependencies": {
-    "tsc": "^2.0.3"
+    "tsc": "^2.0.3",
+    "webpack-cli": "^4.7.2"
   }
 }
