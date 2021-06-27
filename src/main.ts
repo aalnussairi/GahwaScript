@@ -195,10 +195,12 @@ runButton.addEventListener('click', runCompiler);
 
 // Event Handlers
 function runCompiler() {
+  console.time("execution");
   console.log('Detected a click of the run button');
   codeInput = document.querySelector('#code-area');
   const runner = new Function(compile(codeInput.value));
   runner();
+  console.timeEnd("execution");
 }
 
 function compile(input: string) {
