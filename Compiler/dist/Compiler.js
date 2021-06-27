@@ -1,8 +1,6 @@
-"use strict";
-exports.__esModule = true;
-var Parser_1 = require("./Parser");
-function default_1(input) {
-    var parser = new Parser_1["default"]();
+import Parser from './Parser';
+export default function (input) {
+    var parser = new Parser();
     var transformed = parser.parse(input);
     var output = [];
     for (var i = 0; i < transformed.length; i++) {
@@ -11,4 +9,3 @@ function default_1(input) {
     var expressions = output.join('');
     return expressions;
 }
-exports["default"] = default_1;

@@ -1,6 +1,4 @@
-"use strict";
-exports.__esModule = true;
-exports["default"] = new Map([
+export default new Map([
     ['غير متزامن', 'async'],
     ['أكسر', 'break'],
     ['حالة', 'case'],

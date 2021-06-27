@@ -1,10 +1,8 @@
-"use strict";
-exports.__esModule = true;
-var Tokenizer_1 = require("./Tokenizer");
+import Tokenizer from './Tokenizer';
 var Parser = (function () {
     function Parser() {
         this.input = '';
-        this.tokeizer = new Tokenizer_1["default"](this.input);
+        this.tokeizer = new Tokenizer(this.input);
     }
     Parser.prototype.parse = function (input) {
         this.input = input;
@@ -13,4 +11,4 @@ var Parser = (function () {
     };
     return Parser;
 }());
-exports["default"] = Parser;
+export default Parser;

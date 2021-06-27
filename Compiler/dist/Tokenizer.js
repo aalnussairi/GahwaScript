@@ -1,8 +1,6 @@
-"use strict";
-exports.__esModule = true;
-var punctuators_1 = require("./tokens/punctuators");
-var keywords_1 = require("./tokens/keywords");
-var WebAPI_1 = require("./tokens/WebAPI");
+import punctuators from './tokens/punctuators';
+import identifiers from './tokens/keywords';
+import WebAPI from './tokens/WebAPI';
 var Tokenizer = (function () {
     function Tokenizer(input) {
         this.input = input;
@@ -26,8 +24,8 @@ var Tokenizer = (function () {
                 current++;
                 continue;
             }
-            if (punctuators_1["default"].has(char)) {
-                this.tokensPush('punctuation', current, current, punctuators_1["default"].get(char));
+            if (punctuators.has(char)) {
+                this.tokensPush('punctuation', current, current, punctuators.get(char));
                 current++;
                 continue;
             }
@@ -70,12 +68,12 @@ var Tokenizer = (function () {
                     value += char;
                     char = this.input[++current];
                 }
-                if (keywords_1["default"].has(value)) {
-                    this.tokensPush('keyword', startPoint, current - 1, keywords_1["default"].get(value));
+                if (identifiers.has(value)) {
+                    this.tokensPush('keyword', startPoint, current - 1, identifiers.get(value));
                     continue;
                 }
-                if (WebAPI_1["default"].has(value)) {
-                    this.tokensPush('identifier', startPoint, current - 1, WebAPI_1["default"].get(value));
+                if (WebAPI.has(value)) {
+                    this.tokensPush('identifier', startPoint, current - 1, WebAPI.get(value));
                     continue;
                 }
                 this.tokensPush('name', startPoint, current - 1, value);
@@ -95,4 +93,4 @@ var Tokenizer = (function () {
     };
     return Tokenizer;
 }());
-exports["default"] = Tokenizer;
+export default Tokenizer;

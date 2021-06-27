@@ -1,8 +1,8 @@
 {
-  "name": "gahwascript",
-  "version": "0.0.1",
-  "description": "An arabic translation of JavaScript with an accompanying compiler/transpiler/translator",
-  "main": "index.js",
+  "name": "gahwascript-compiler-web",
+  "version": "1.0.0",
+  "description": "Compiling GahwaScript into JavaScript within a browser and running compiled code.",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,16 +11,17 @@
     "url": "git+https://github.com/aalnussairi/GahwaScript.git"
   },
   "keywords": [
-    "GahwaScript"
+    "GahwaScript",
+    "JavaScript",
+    "Arabic"
   ],
   "author": "Ahmed Al-Nussairi",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aalnussairi/GahwaScript/issues"
   },
   "homepage": "https://github.com/aalnussairi/GahwaScript#readme",
   "devDependencies": {
-    "webpack": "^5.40.0",
-    "webpack-cli": "^4.7.2"
+    "tsc": "^2.0.3"
   }
 }
