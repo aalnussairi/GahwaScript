@@ -195,12 +195,12 @@ runButton.addEventListener('click', runCompiler);
 
 // Event Handlers
 function runCompiler() {
-  console.time("execution");
+  console.time('execution');
   console.log('Detected a click of the run button');
   codeInput = document.querySelector('#code-area');
   const runner = new Function(compile(codeInput.value));
   runner();
-  console.timeEnd("execution");
+  console.timeEnd('execution');
 }
 
 function compile(input: string) {
@@ -270,6 +270,12 @@ function parser(input: string): Token[] {
     // check for whitespace
     const WHITESPACE = /\s/;
     if (WHITESPACE.test(char)) {
+      tokens.push({
+        type: 'whitespace',
+        start: current,
+        end: current,
+        value: '',
+      });
       current++;
       continue;
     }
