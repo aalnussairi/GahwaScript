@@ -1,5 +1,10 @@
 // Definitions, I suggest that you collapse them
 // in your code editor
+
+// example code:
+//  لكل(دع ا = ٠؛ ا<=١٠٠٠؛ ا++){
+//   لوحة.سجل("ا يوساوي: "، ا)؛
+// }؛
 const keywords = new Map([
   ['غير متزامن', 'async'],
   ['أكسر', 'break'],
@@ -43,8 +48,8 @@ const keywords = new Map([
 ]);
 
 const punctuation = new Map([
-  ['}', '{'],
-  ['{', '}'],
+  ['}', '}'],
+  ['{', '{'],
   [']', '['],
   ['[', ']'],
   [')', '('],
@@ -54,8 +59,8 @@ const punctuation = new Map([
   [';', ';'],
   ['،', ','],
   [',', ','],
-  ['>', '<'],
-  ['<', '>'],
+  ['>', '>'],
+  ['<', '<'],
   ['=', '='],
   ['!', '!'],
   ['+', '+'],
@@ -287,7 +292,7 @@ function parser(input: string): Token[] {
         type: 'whitespace',
         start: current,
         end: current,
-        value: '',
+        value: ' ',
       });
       current++;
       continue;
