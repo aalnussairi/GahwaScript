@@ -179,6 +179,19 @@ const WebAPI = new Map([
   ['بدل', 'replace'],
 ]);
 
+const numbers = new Map([
+  ['٠', 0],
+  ['١', 1],
+  ['٢', 2],
+  ['٣', 3],
+  ['٤', 4],
+  ['٥', 5],
+  ['٦', 6],
+  ['٧', 7],
+  ['٨', 8],
+  ['٩', 9],
+]);
+
 interface Token {
   type: string;
   start: number;
@@ -287,7 +300,7 @@ function parser(input: string): Token[] {
       let value = '';
 
       while (NUMBERS.test(char)) {
-        value += char;
+        if (numbers.has(char)) value += numbers.get(char);
         char = input[++current];
       }
       // 'number', startPoint, current - 1, value
