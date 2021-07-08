@@ -205,7 +205,7 @@ interface Token {
 }
 
 // WebElements
-let codeInput = document.querySelector('#code-area');
+let codeInput = <HTMLInputElement>document.querySelector('#code-area');
 let runButton = document.querySelector('#run');
 
 // Event Listeners
@@ -213,7 +213,6 @@ runButton.addEventListener('click', runCompiler);
 
 // Event Handlers
 function runCompiler() {
-  codeInput = document.querySelector('#code-area');
   const runner = new Function(compile(codeInput.value));
   runner();
 }

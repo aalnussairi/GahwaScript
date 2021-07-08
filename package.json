@@ -4,7 +4,8 @@
   "description": "Compiling GahwaScript into JavaScript within a browser and running compiled code.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npx webpack ./dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "devDependencies": {
     "tsc": "^2.0.3",
     "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "typescript": "^4.3.5"
   }
 }
