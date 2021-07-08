@@ -208,20 +208,20 @@ runButton.addEventListener('click', runCompiler);
 
 // Event Handlers
 function runCompiler() {
-  console.time('execution');
-  console.log('Detected a click of the run button');
   codeInput = document.querySelector('#code-area');
   const runner = new Function(compile(codeInput.value));
   runner();
-  console.timeEnd('execution');
 }
 
 function compile(input: string) {
   const tokens: any = parser(input);
+  console.time('Compiled code in');
+  console.log('Compiling...');
   for (let i = 0; i < tokens.length; i++) {
     tokens[i] = tokens[i].value;
   }
   console.log(tokens.join(''));
+  console.timeEnd('Compiled code in');
   return tokens.join('');
 }
 
