@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@gahwascript/compiler": "workspace:*",
+    "gahwascript": "workspace:*",
     "astro": "^6.4.6",
     "quickjs-emscripten": "^0.32.0"
   },

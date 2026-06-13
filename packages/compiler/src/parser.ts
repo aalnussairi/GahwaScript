@@ -1,5 +1,5 @@
-import { Token } from './types';
-import { keywords, punctuation, WebAPI, numbers } from './maps';
+import { Token } from './types.js';
+import { keywords, punctuation, WebAPI, numbers } from './maps.js';
 
 export function parser(input: string): Token[] {
   let current = 0;

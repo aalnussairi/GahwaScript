@@ -1,12 +1,12 @@
 {
-  "name": "gahwascript",
+  "name": "@gahwascript/root",
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild", "sharp"]
   },
   "private": true,
   "scripts": {
     "build": "pnpm --recursive build",
-    "build:compiler": "pnpm --filter @gahwascript/compiler build",
+    "build:compiler": "pnpm --filter ./packages/compiler build",
     "build:web": "pnpm --filter @gahwascript/web build",
     "dev": "pnpm --recursive --parallel dev"
   },

@@ -1,4 +1,4 @@
-import { Compiler } from '@gahwascript/compiler';
+import { Compiler } from 'gahwascript';
 import { evalInSandbox } from './sandbox';
 
 const compiler = new Compiler();

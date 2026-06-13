@@ -1,25 +1,60 @@
 {
-  "name": "@gahwascript/compiler",
+  "name": "gahwascript",
+  "type": "module",
   "version": "1.0.0",
-  "description": "GahwaScript-to-JavaScript compiler",
+  "description": "GahwaScript-to-JavaScript compiler — Arabic syntax for JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "gsc": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./parser": {
+      "types": "./dist/parser.d.ts",
+      "import": "./dist/parser.js",
+      "default": "./dist/parser.js"
+    },
+    "./maps": {
+      "types": "./dist/maps.d.ts",
+      "import": "./dist/maps.js",
+      "default": "./dist/maps.js"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "sideEffects": false,
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalnussairi/GahwaScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aalnussairi/GahwaScript/issues"
+  },
+  "homepage": "https://github.com/aalnussairi/GahwaScript#readme",
   "devDependencies": {
+    "@types/node": "^25.9.3",
     "typescript": "^4.3.5"
   },
   "keywords": [
     "GahwaScript",
     "JavaScript",
     "Arabic",
-    "compiler"
+    "compiler",
+    "transpiler",
+    "source-to-source"
   ],
   "author": "Ahmed Al-Nussairi",
   "license": "MIT"

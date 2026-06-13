@@ -1,9 +1,9 @@
-import { parser } from './parser';
-import { Token } from './types';
+import { parser } from './parser.js';
+import { Token } from './types.js';
 
-export { Token } from './types';
-export { parser } from './parser';
-export { keywords, punctuation, WebAPI, numbers } from './maps';
+export { Token } from './types.js';
+export { parser } from './parser.js';
+export { keywords, punctuation, WebAPI, numbers } from './maps.js';
 
 export class Compiler {
   compile(input: string): string {
