@@ -1,0 +1,6 @@
+[build]
+  command = "pnpm install --frozen-lockfile && pnpm --filter @gahwascript/web build"
+  publish = "packages/web/dist"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
