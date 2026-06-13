@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm install --frozen-lockfile && pnpm --filter @gahwascript/web build"
+  command = "pnpm install --frozen-lockfile && pnpm --filter gahwascript build && pnpm --filter @gahwascript/web build"
   publish = "packages/web/dist"
 
 [build.environment]
