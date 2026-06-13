@@ -1,11 +1,4 @@
-// Definitions, I suggest that you collapse them
-// in your code editor
-
-// example code:
-//  لكل(دع ا = ٠؛ ا<=١٠٠٠؛ ا++){
-//   لوحة.سجل("ا يوساوي: "، ا)؛
-// }؛
-const keywords = new Map([
+export const keywords = new Map([
   ['غير متزامن', 'async'],
   ['أكسر', 'break'],
   ['حالة', 'case'],
@@ -47,7 +40,7 @@ const keywords = new Map([
   ['تمهل', 'yield'],
 ]);
 
-const punctuation = new Map([
+export const punctuation = new Map([
   ['}', '}'],
   ['{', '{'],
   [']', '['],
@@ -83,7 +76,7 @@ const punctuation = new Map([
   ['~', '~'],
 ]);
 
-const WebAPI = new Map([
+export const WebAPI = new Map([
   ['نافذة', 'window'],
   ['مغلق', 'closed'],
   ['لوحة', 'console'],
@@ -184,7 +177,7 @@ const WebAPI = new Map([
   ['بدل', 'replace'],
 ]);
 
-const numbers = new Map([
+export const numbers = new Map([
   ['٠', 0],
   ['١', 1],
   ['٢', 2],
@@ -206,167 +199,3 @@ const numbers = new Map([
   ['8', 8],
   ['9', 9],
 ]);
-
-interface Token {
-  type: string;
-  start: number;
-  end: number;
-  value: string;
-}
-
-// WebElements
-let codeInput = <HTMLInputElement>document.querySelector('#code-area');
-let runButton = document.querySelector('#run');
-
-// Event Listeners
-runButton.addEventListener('click', runCompiler);
-
-// Event Handlers
-function runCompiler() {
-  const runner = new Function(compile(codeInput.value));
-  runner();
-}
-
-function compile(input: string) {
-  const tokens: any = parser(input);
-  console.time('Compiled code in');
-  console.log('Compiling...');
-  for (let i = 0; i < tokens.length; i++) {
-    tokens[i] = tokens[i].value;
-  }
-  console.log(tokens.join(''));
-  console.timeEnd('Compiled code in');
-  return tokens.join('');
-}
-
-function parser(input: string): Token[] {
-  let current = 0;
-  let tokens: Token[] = [];
-
-  while (current < input.length) {
-    let char = input[current];
-    //check paren
-    if (char === '(' || char === ')') {
-      tokens.push({
-        type: 'paren',
-        start: current,
-        end: current,
-        value: char,
-      });
-      current++;
-      continue;
-    }
-
-    //check for punctuation
-    if (punctuation.has(char)) {
-      // 'punctuation', current, current, punctuation.get(char)
-      tokens.push({
-        type: 'punctuation',
-        start: current,
-        end: current,
-        value: punctuation.get(char),
-      });
-      current++;
-      continue;
-    }
-
-    // THIS LOOKS UGLY BUT AT LEAST IT WORKS
-    // TODO: MAKE IT LOOK A BIT BETTER JEEZ
-    const STRINGS = /'|"/;
-    if (STRINGS.test(char)) {
-      const startPoint = current,
-        startIdentifier = char;
-      console.log(startIdentifier);
-      let value = '';
-      do {
-        char = input[++current];
-        if (char === '"') break;
-        value += char;
-      } while (char !== startIdentifier);
-      char = input[++current];
-      // 'string', startPoint, current - 1, `"${value}"`
-      tokens.push({
-        type: 'string',
-        start: startPoint,
-        end: current - 1,
-        value: `"${value}"`,
-      });
-      continue;
-    }
-
-    // check for whitespace
-    const WHITESPACE = /\s/;
-    if (WHITESPACE.test(char)) {
-      tokens.push({
-        type: 'whitespace',
-        start: current,
-        end: current,
-        value: ' ',
-      });
-      current++;
-      continue;
-    }
-
-    //Check for Numbers
-    const NUMBERS = /[٠-٩0-9]/;
-    if (NUMBERS.test(char)) {
-      const startPoint = current;
-      let value = '';
-
-      while (NUMBERS.test(char)) {
-        if (numbers.has(char)) value += numbers.get(char);
-        char = input[++current];
-      }
-      // 'number', startPoint, current - 1, value
-      tokens.push({
-        type: 'number',
-        start: startPoint,
-        end: current - 1,
-        value: value,
-        // need to somehow change the value in arabic to english... I guess...
-      });
-      continue;
-    }
-
-    // Check for words
-    const LETTERS = /^[ء-ي$_]+([ء-ي٠-٩0-9$ـ]*)$/;
-    if (LETTERS.test(char)) {
-      const startPoint = current;
-      let value = '';
-
-      while (LETTERS.test(char)) {
-        value += char;
-        char = input[++current];
-      }
-      if (keywords.has(value)) {
-        tokens.push({
-          type: 'keyword',
-          start: startPoint,
-          end: current - 1,
-          value: keywords.get(value),
-        });
-        continue;
-      }
-      if (WebAPI.has(value)) {
-        tokens.push({
-          type: 'identifier',
-          start: startPoint,
-          end: current - 1,
-          value: WebAPI.get(value),
-        });
-        continue;
-      }
-      tokens.push({
-        type: 'name',
-        start: startPoint,
-        end: current - 1,
-        value: value,
-      });
-      continue;
-    }
-    throw new TypeError(
-      `I don't know what this is ${char} at position ${current}`
-    );
-  }
-  return tokens;
-}

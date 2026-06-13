@@ -1,32 +1,21 @@
 {
-  "name": "gahwascript-compiler-web",
-  "version": "1.0.0",
-  "description": "Compiling GahwaScript into JavaScript within a browser and running compiled code.",
-  "main": "main.js",
+  "name": "gahwascript",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && npx webpack ./dist/main.js"
+    "build": "pnpm --recursive build",
+    "build:compiler": "pnpm --filter @gahwascript/compiler build",
+    "build:web": "pnpm --filter @gahwascript/web build",
+    "dev": "pnpm --recursive --parallel dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aalnussairi/GahwaScript.git"
   },
-  "keywords": [
-    "GahwaScript",
-    "JavaScript",
-    "Arabic"
-  ],
+  "keywords": ["GahwaScript", "JavaScript", "Arabic"],
   "author": "Ahmed Al-Nussairi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aalnussairi/GahwaScript/issues"
   },
-  "homepage": "https://github.com/aalnussairi/GahwaScript#readme",
-  "devDependencies": {
-    "tsc": "^2.0.3",
-    "webpack-cli": "^4.7.2"
-  },
-  "dependencies": {
-    "typescript": "^4.3.5"
-  }
+  "homepage": "https://github.com/aalnussairi/GahwaScript#readme"
 }

@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "target": "es2015",
+    "module": "commonjs",
+    "declaration": true,
     "noImplicitAny": true,
     "removeComments": true,
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "sourceMap": false,
-    "lib": ["es2015", "dom"]
-  },
-  "include": ["src/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
 }

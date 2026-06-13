@@ -1,0 +1,26 @@
+{
+  "name": "@gahwascript/compiler",
+  "version": "1.0.0",
+  "description": "GahwaScript-to-JavaScript compiler",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "keywords": [
+    "GahwaScript",
+    "JavaScript",
+    "Arabic",
+    "compiler"
+  ],
+  "author": "Ahmed Al-Nussairi",
+  "license": "MIT"
+}
