@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GahwaScript</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    textarea {
+      width: 100%;
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      direction: ltr;
+    }
+    button {
+      margin-top: 0.75rem;
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 0.75rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body>
+  <h1>GahwaScript</h1>
+  <textarea id="code-area" rows="12" placeholder="اكتب كود القهوة هنا..."></textarea>
+  <button id="run">شغّل</button>
+  <pre id="output"></pre>
+  <pre id="result"></pre>
+  <script src="../scripts/editor.ts"></script>
+</body>
+</html>
