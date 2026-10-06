@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@astrojs/netlify": "^7.0.13",
+    "@astrojs/netlify": "^8.2.4",
     "astro": "^6.4.6",
     "gahwascript": "workspace:*",
     "quickjs-emscripten": "^0.32.0"
